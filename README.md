@@ -1,20 +1,26 @@
 # 2048 Game on RGB LED Matrix
 
-[cite_start]This repository contains a high-performance, standalone implementation of the "2048" puzzle game for the **Arduino Mega 2560**[cite: 3, 33]. [cite_start]The project interfaces directly with a **64x32 RGB LED matrix** using the HUB75 protocol without relying on high-level graphics libraries[cite: 9, 34].
+This repository contains a high-performance implementation of the game "2048" developed for the Arduino Mega 2560. The system interfaces with a 64x32 RGB LED matrix (HUB75) using low-level hardware control to ensure smooth, flicker-free gameplay.
 
-### Key Technical Features
-* [cite_start]**Bare-Metal Hardware Control**: Utilizes **Direct Port Manipulation** to achieve high-speed parallel data transmission[cite: 11, 28].
-* [cite_start]**Binary Code Modulation (BCM)**: Implements a custom 4-bit color depth (16 levels of brightness) through precise timing control[cite: 11, 29, 46].
-* [cite_start]**Asynchronous Architecture**: Decouples display refreshing from game logic using **Timer1** and hardware interrupts, ensuring a flicker-free refresh rate[cite: 12, 31, 68].
-* [cite_start]**Optimized Memory Management**: Employs a pre-calculated buffer strategy to minimize CPU overhead and maintain responsiveness during intensive multiplexing[cite: 15, 30, 57].
+## Technical Highlights
+* **Bare-Metal Performance**: Built using Direct Port Manipulation to bypass slow standard libraries, allowing for high-speed data transmission to the LED matrix.
+* **4-bit Color Depth**: Implements Binary Code Modulation (BCM) to achieve 16 levels of brightness per color channel.
+* **Asynchronous Architecture**: Game logic is decoupled from the display refresh process using Timer1 and hardware interrupts, ensuring constant frame rates regardless of processing load.
+* **Memory Optimization**: Utilizes a pre-calculated buffer strategy to save CPU cycles and maintain system responsiveness.
 
-### Repository Structure
-The project source code is organized within the `src` directory.
-* **Latest Version**: `src/FINAL2048.ino`
+## Project Structure
+The source code is organized within the `src` folder.
+* **Latest Version**: `src/FINAL2048.ino` 
 
-### Authors
-* [cite_start]**Demian Piodi**: Hardware architecture, low-level HUB75 driver, BCM implementation, and buffer optimization[cite: 5, 119].
-* [cite_start]**Tamer Erata**: High-level game logic, tile merging algorithms, score tracking, and state management[cite: 5, 120].
+## Hardware Requirements
+* Arduino Mega 2560
+* 64x32 RGB LED Matrix (HUB75 interface)
+* External 5V 4A Power Supply
+* 4x Tactile Push-buttons (for movements)
+
+## Authors
+* **Demian Piodi**: Hardware architecture, low-level HUB75 driver, BCM implementation, and buffer optimization.
+* **Tamer Erata**: High-level game logic, tile merging algorithms, and game state management.
 
 ---
-[cite_start]*Developed as part of the Computer Architecture (HS25) course at the University of Basel[cite: 1, 8].*
+*Developed for the Computer Architecture (HS25) course at the University of Basel.*
